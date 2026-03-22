@@ -45,8 +45,6 @@ The classification model is a 3-layer MLP (64 → 32 → 16 → 8) that:
 - Weights user feedback 3x more than synthetic data during retraining
 - Persists the trained model in IndexedDB across sessions
 
-Optionally, a Python training pipeline (`scripts/train/`) is available for offline training with scikit-learn + ONNX export.
-
 ## Getting Started
 
 ```bash
@@ -110,8 +108,6 @@ src/
   components/
     sidebar/              # Sidebar UI components
   contents/               # Plasmo content script entry + CSS
-scripts/
-  train/                  # Python training pipeline (optional)
 ```
 
 ## Architecture
@@ -166,6 +162,20 @@ Sentry DOM ──► Extractor ──► ParsedIncident
 | Breadcrumbs | 5 | breadcrumbCount, hasDBQueryBreadcrumbs |
 | Context / infra | 6 | isDocker, isLambda, hasCloudProvider |
 | Text metrics | 4 | titleWordCount, hasStackTrace, errorMessageLength |
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+1. Fork the repository
+2. Create your branch (`git checkout -b feature/my-feature`)
+3. Make your changes
+4. Run the tests (`npm test`)
+5. Commit (`git commit -m "Add my feature"`)
+6. Push (`git push origin feature/my-feature`)
+7. Open a Pull Request
+
+If you're unsure about something, open an issue first to discuss it.
 
 ## License
 
