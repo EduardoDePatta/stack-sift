@@ -163,12 +163,6 @@ Sentry DOM ──► Extractor ──► ParsedIncident
 | Context / infra | 6 | isDocker, isLambda, hasCloudProvider |
 | Text metrics | 4 | titleWordCount, hasStackTrace, errorMessageLength |
 
-## Chrome Web Store
-
-- **Icon:** `assets/icon.png` (Plasmo generates toolbar/store icon sizes from it).
-- **Privacy policy:** [docs/privacy-policy.txt](./docs/privacy-policy.txt) — use [raw on `main`](https://raw.githubusercontent.com/EduardoDePatta/stack-sift/main/docs/privacy-policy.txt) as the store URL.
-- **Checklist:** [docs/WEBSTORE.md](./docs/WEBSTORE.md) (ZIP via `npm run package`, screenshots, dashboard fields).
-
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
