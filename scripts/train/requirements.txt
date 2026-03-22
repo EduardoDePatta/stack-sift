@@ -1,5 +1,0 @@
-scikit-learn>=1.4
-skl2onnx>=1.17
-onnxruntime>=1.17
-pandas>=2.2
-numpy>=1.26
