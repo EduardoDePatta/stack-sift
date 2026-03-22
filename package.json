@@ -2,8 +2,14 @@
   "name": "stack-sift",
   "displayName": "Stack Sift",
   "version": "0.1.0",
-  "description": "Intelligent incident triage for Sentry pages",
-  "author": "",
+  "description": "Triage Sentry issues locally: classify errors, ML insights, and sidebar on sentry.io pages.",
+  "author": "Stack Sift Contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/EduardoDePatta/stack-sift",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EduardoDePatta/stack-sift.git"
+  },
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
