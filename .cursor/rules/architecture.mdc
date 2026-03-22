@@ -6,15 +6,20 @@ globs: src/**/*
 # Architecture
 
 ## Structure
-- Domain-oriented: `features/dom`, `features/classification`, `features/insights`, `features/sentry`
+- Domain-oriented: `features/dom`, `features/classification`, `features/insights`, `features/ml`, `features/feedback`, `features/sentry`, `features/editor`
+- Within a feature: public entry files at the leaf name (e.g. `classifyIncident.ts`), shared `data/` for constants and rule tables, `internal/` or `*.helpers.ts` for non-exported logic used only in that feature
 - `shared/types` for project-level types, `shared/utils` for small reusable helpers
-- `components/` for pure UI only
+- `components/` for pure UI; subfolders such as `components/sidebar/` for composite UI
+- `contents/` for Plasmo CSUI entrypoints and thin wiring
 
 ## Boundaries
 - `features/dom`: DOM reading, extraction, normalization only. No classification. No React.
 - `features/classification`: Pure rule-based functions. No DOM access. No React.
-- `features/insights`: Summary, hypothesis, priority, useful-frame. Pure functions. No DOM. No React.
-- `features/sentry`: Orchestration between extraction, classification, and rendering.
+- `features/insights`: Summary, hypothesis, priority, useful-frame, recommendations. Pure functions. No DOM. No React.
+- `features/ml`: Feature extraction, inference, TF model, retrain. No React.
+- `features/feedback`: Storage and adaptive similarity. No React except via callers.
+- `features/sentry`: Page analysis orchestration (`analyzeCurrentPage`). No React.
+- `features/editor`: Open-in-editor helpers. No React.
 - `components/`: Pure UI. No business logic.
 
 ## Code Style
@@ -24,3 +29,4 @@ globs: src/**/*
 - Files should stay under ~200 lines
 - No premature generic abstractions — build concretely first
 - No dead files or placeholder architecture without implementation
+- Do not add comments in source (TypeScript, TSX, CSS); keep code self-explanatory
