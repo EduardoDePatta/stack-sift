@@ -163,6 +163,12 @@ Sentry DOM ──► Extractor ──► ParsedIncident
 | Context / infra | 6 | isDocker, isLambda, hasCloudProvider |
 | Text metrics | 4 | titleWordCount, hasStackTrace, errorMessageLength |
 
+## Chrome Web Store
+
+- **Icon:** `assets/icon.png` (Plasmo generates toolbar/store icon sizes from it).
+- **Privacy policy (draft):** [docs/privacy-policy.html](./docs/privacy-policy.html) — publish it at a public HTTPS URL before submitting the listing.
+- **Checklist:** [docs/WEBSTORE.md](./docs/WEBSTORE.md) (ZIP via `npm run package`, screenshots, dashboard fields).
+
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
