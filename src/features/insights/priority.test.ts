@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { computePriority } from "./priority"
+import { computePriority } from "./computePriority"
 
 describe("computePriority", () => {
   it("returns low for non-production environments", () => {

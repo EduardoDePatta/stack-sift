@@ -1,0 +1,7 @@
+export { buildFingerprint } from "./buildFingerprint"
+export { clearFeedback } from "./clearFeedback"
+export { exportFeedbackAsTrainingJSON } from "./exportFeedbackAsTrainingJSON"
+export { getAllFeedback } from "./getAllFeedback"
+export { getExactFeedback } from "./getExactFeedback"
+export { getFeedbackCount } from "./getFeedbackCount"
+export { saveFeedback } from "./saveFeedback"

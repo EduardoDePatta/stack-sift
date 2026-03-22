@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import type { IncidentCategory } from "~/shared/types/incident"
-import { buildHypothesis } from "./hypothesis"
+import { buildHypothesis } from "./buildHypothesis"
 
 const ALL_CATEGORIES: IncidentCategory[] = [
   "timeout",

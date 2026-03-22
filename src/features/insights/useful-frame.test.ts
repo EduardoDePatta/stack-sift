@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest"
-import { findAllUsefulFrames, findFirstUsefulFrame } from "./useful-frame"
+import { findAllUsefulFrames } from "./usefulFrame/findAllUsefulFrames"
+import { findFirstUsefulFrame } from "./usefulFrame/findFirstUsefulFrame"
 
 describe("findFirstUsefulFrame", () => {
   it("returns the first application frame", () => {

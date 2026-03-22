@@ -1,6 +1,6 @@
 import { JSDOM } from "jsdom"
 import { describe, expect, it } from "vitest"
-import { extractIncidentFromDOM } from "./extractor"
+import { extractIncidentFromDOM } from "./extractIncidentFromDOM"
 
 function createDocument(html: string): Document {
   const dom = new JSDOM(`<!DOCTYPE html><html><body>${html}</body></html>`)

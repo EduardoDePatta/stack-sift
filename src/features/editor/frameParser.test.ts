@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { parseFrame } from "./frameParser"
+import { parseFrame } from "./frameParser/parseFrame"
 
 describe("parseFrame", () => {
   describe("Sentry DOM format (filename in function)", () => {

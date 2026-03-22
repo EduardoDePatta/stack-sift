@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import type { ParsedIncident } from "~/shared/types/incident"
-import { buildSummary } from "./summary"
+import { buildSummary } from "./buildSummary"
 
 function makeIncident(overrides: Partial<ParsedIncident> = {}): ParsedIncident {
   return {

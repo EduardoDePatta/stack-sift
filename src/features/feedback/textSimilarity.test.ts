@@ -1,10 +1,8 @@
 import { describe, expect, it } from "vitest"
-import {
-  tokenize,
-  buildTermFrequency,
-  cosineSimilarity,
-  textSimilarity
-} from "./textSimilarity"
+import { buildTermFrequency } from "./textSimilarity/buildTermFrequency"
+import { cosineSimilarity } from "./textSimilarity/cosineSimilarity"
+import { textSimilarity } from "./textSimilarity/textSimilarity"
+import { tokenize } from "./textSimilarity/tokenize"
 
 describe("tokenize", () => {
   it("lowercases and splits on non-alphanum", () => {

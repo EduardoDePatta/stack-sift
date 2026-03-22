@@ -1,0 +1,21 @@
+export const ERROR_HANDLER_PATTERNS = [
+  "handleerror",
+  "handle-error",
+  "throwerror",
+  "throw-error",
+  "errorhandler",
+  "error-handler",
+  "handlev3error",
+  "handlev2error",
+  "handleapierror",
+  "handlehttperror",
+  "wrapperror",
+  "rethrow",
+  "reporterror",
+  "captureerror",
+  "logerror",
+  "onuncaughterror",
+  "handleexception",
+  "exceptionhandler",
+  "processerror"
+]

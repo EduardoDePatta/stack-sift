@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { isSentryIssuePage } from "./detect"
+import { isSentryIssuePage } from "./isSentryIssuePage"
 
 describe("isSentryIssuePage", () => {
   it("matches org subdomain issue URL", () => {

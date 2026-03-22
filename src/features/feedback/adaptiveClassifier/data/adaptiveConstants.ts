@@ -1,0 +1,2 @@
+export const MIN_FEEDBACK_SIMILARITY = 0.25
+export const ADAPTIVE_NEIGHBOR_K = 5

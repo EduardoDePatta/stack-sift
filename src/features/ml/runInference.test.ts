@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest"
 import type { MLFeatures } from "./types"
-import { _mockInference, _parseModelOutput, runInference } from "./runInference"
+import {
+  _mockInference,
+  _parseModelOutput,
+  featuresToArray,
+  runInference
+} from "./runInference"
 
 function makeFeatures(overrides: Partial<MLFeatures> = {}): MLFeatures {
   return {
@@ -139,37 +144,50 @@ describe("mockInference", () => {
 
 describe("parseModelOutput", () => {
   it("picks the category with highest score", () => {
-    const output = new Float32Array([
-      0.1, 0.9, 0.05, 0.02, 0.01, 0.0, 0.0, 0.0
-    ])
+    const output = [0.1, 0.9, 0.05, 0.02, 0.01, 0.0, 0.0, 0.0]
     const result = _parseModelOutput(output)
     expect(result.category).toBe("database")
     expect(result.confidence).toBe(0.9)
   })
 
   it("picks timeout when it has the highest score", () => {
-    const output = new Float32Array([
-      0.85, 0.1, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0
-    ])
+    const output = [0.85, 0.1, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0]
     const result = _parseModelOutput(output)
     expect(result.category).toBe("timeout")
     expect(result.confidence).toBe(0.85)
   })
 
   it("clamps confidence to [0, 1]", () => {
-    const output = new Float32Array([
-      1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
-    ])
+    const output = [1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     const result = _parseModelOutput(output)
     expect(result.confidence).toBeLessThanOrEqual(1)
   })
 
   it("returns unknown for last index", () => {
-    const output = new Float32Array([
-      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.95
-    ])
+    const output = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.95]
     const result = _parseModelOutput(output)
     expect(result.category).toBe("unknown")
+  })
+})
+
+describe("featuresToArray", () => {
+  it("produces an array of length 64", () => {
+    const arr = featuresToArray(makeFeatures())
+    expect(arr.length).toBe(64)
+  })
+
+  it("converts booleans to 0/1 and keeps numbers", () => {
+    const arr = featuresToArray(
+      makeFeatures({
+        hasTimeoutTerms: true,
+        stackDepth: 10,
+        appFrameRatio: 0.75
+      })
+    )
+    expect(arr[0]).toBe(1.0)
+    expect(arr[1]).toBe(0.0)
+    expect(arr[25]).toBe(10)
+    expect(arr[27]).toBe(0.75)
   })
 })
 

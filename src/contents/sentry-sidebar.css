@@ -511,3 +511,76 @@
   color: #16a34a;
   font-weight: 500;
 }
+
+.ss-retrain {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.ss-retrain-btn {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #4f46e5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.ss-retrain-btn:hover {
+  background: #4338ca;
+}
+
+.ss-retrain-progress {
+  font-size: 11px;
+  color: #6366f1;
+  margin-bottom: 6px;
+}
+
+.ss-retrain-bar {
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ss-retrain-bar-fill {
+  height: 100%;
+  background: #6366f1;
+  transition: width 0.3s ease;
+}
+
+.ss-retrain-done {
+  font-size: 11px;
+  color: #16a34a;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ss-retrain-error {
+  font-size: 11px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.ss-retrain-trained {
+  font-size: 11px;
+  color: #4f46e5;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.ss-retrain-btn-secondary {
+  background: #eef2ff;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+  font-weight: 500;
+}
+
+.ss-retrain-btn-secondary:hover {
+  background: #e0e7ff;
+}

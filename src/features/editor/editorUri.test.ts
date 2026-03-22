@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { buildEditorUri } from "./editorUri"
+import { buildEditorUri } from "./buildEditorUri"
 
 describe("buildEditorUri", () => {
   it("builds cursor URI with line and column", () => {

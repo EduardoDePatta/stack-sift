@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import type { MLFeatures } from "~/features/ml/types"
 import type { FeedbackExample } from "./types"
-import { classifyWithFeedback } from "./adaptiveClassifier"
+import { classifyWithFeedback } from "./adaptiveClassifier/classifyWithFeedback"
 
 function makeFeatures(overrides: Partial<MLFeatures> = {}): MLFeatures {
   return {

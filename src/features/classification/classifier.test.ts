@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import type { ParsedIncident } from "~/shared/types/incident"
-import { classifyIncident } from "./classifier"
+import { classifyIncident } from "./classifyIncident"
 
 function makeIncident(overrides: Partial<ParsedIncident> = {}): ParsedIncident {
   return {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { mapToSourcePath } from "./pathMapper"
+import { mapToSourcePath } from "./pathMapper/mapToSourcePath"
 
 describe("mapToSourcePath", () => {
   describe("strips build prefixes", () => {
